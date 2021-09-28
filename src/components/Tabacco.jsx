@@ -1,35 +1,49 @@
 import React, { Component } from 'react';
+
+
+
+  
 import { withRouter } from 'react-router';
 
 import './forms.css';
-
 import Footer from '../Footer.jsx'
 
 
 
-class HealthPlan extends Component {
 
-    plan = (values) => {
-
-        values.preventDefault();
-        
-        let plan = values.currentTarget.dataset.value;
-
-        this.props.setPlan(plan);
-
-        const urlSearch = window.location.search;
-
-        const urlParams = new URLSearchParams(urlSearch);
-
-        const zip = urlParams.get('zip_code');
-
-        this.props.history.push('/coverage-time' + '?zip_code=' + zip + '&health_insurance_plan=' + plan);
-    }
+class Tabacco extends Component {
 
 
-    render() {
-        return (
-            <div className="back bg-white"> 
+  onFinish = (values) => {
+
+    values.preventDefault();
+    
+    let g = values.currentTarget.dataset.value;
+
+    this.props.setTabacco(g);
+
+    //get URL params
+
+    const urlSearch = window.location.search;
+
+    const urlParams = new URLSearchParams(urlSearch);
+
+    const zip = urlParams.get('zip_code');
+    const plan = urlParams.get('health_insurance_plan');
+    const time = urlParams.get('coverage_time')
+    const income = urlParams.get('household_income');
+    const gender = urlParams.get('gender');
+    
+
+    this.props.history.push('/spouse' + '?zip_code=' + zip + '&health_insurance_plan=' + plan + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&tabacco_use=' + g);
+
+  }
+
+
+  render() {
+    return (
+
+      <div className="back bg-white"> 
        <div className="bg-blue-500 headerText justify-center align-middle text-center">
                     <h2>Get Your Free Health Insurance Quote</h2>
                 </div>
@@ -61,18 +75,19 @@ class HealthPlan extends Component {
             <div> 
             <div className="relative flex justify-center text-sm leading-5 con">
               <span className="px-2 text-black-500 text-3xl bold header">
-              What type of Health Insurance plan are you looking for?
+              Have you used tabacco products within the last 12 months?
               </span>
             </div>
           </div>
-          <form onSubmit={this.plan} >
+          <form onSubmit={this.onFinish} >
           <div className="mt-6">
             <div className="w-full space-y-6 relative flex justify-center text-sm leading-5">
 
               <div className="text-sm leading-5 buttonBlock">
-                <button className="chooseButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="ACA Plan" onClick={this.plan}>ACA Plan</button>
-
+              
+                <button className="chooseButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="Yes" onClick={(values) => this.onFinish(values)}>Yes</button>
                 
+                <button className="chooseButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="No" onClick={(values) => this.onFinish(values)}>No</button>
               </div>
             </div>
           </div>
@@ -93,8 +108,8 @@ class HealthPlan extends Component {
       </div>
        
 
-        )
-    }
+    )
+  }
 }
 
-export default withRouter(HealthPlan)
+export default withRouter(Tabacco)

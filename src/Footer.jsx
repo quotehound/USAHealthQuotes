@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import Logo from './Assets/usahq.png';
 
 
 class Footer extends Component {
@@ -13,7 +14,7 @@ class Footer extends Component {
             <div className="flex flex-wrap justify-between items-center -mx-4">
               <div className="w-full lg:w-auto px-4">
                 <a className="inline-block mb-6 text-gray-900 text-lg font-semibold" href="/" data-config-id="brand">
-                  <img className="h-7"  alt="" width="auto" />
+                  <img className="h-7" src={Logo} alt="" width="auto" />
                 </a>
                 <p className="hidden lg:block text-sm text-gray-500" data-config-id="copy">All rights reserved © Quotehound 2021</p>
               </div>

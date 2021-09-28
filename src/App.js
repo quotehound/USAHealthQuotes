@@ -7,7 +7,17 @@ import LandingPage from './LandingPage';
 import HealthPlan from './components/HealthPlan';
 import CoverageTime from './components/CoverageTime';
 import Income from './components/Income';
-
+import Gender from './components/Gender';
+import Month from './components/Month';
+import Day from './components/Day';
+import Year from './components/Year';
+import Tabacco from './components/Tabacco';
+import Spouse from './components/Spouse';
+import HeightWeight from './components/HeightWeight';
+import Address from './components/Address';
+import Name from './components/Name';
+import EmailPhone from './components/EmailPhone';
+import ThankYou from './components/ThankYou';
 class App extends Component {
 
 
@@ -19,7 +29,17 @@ class App extends Component {
       '/',
       '/health-plan',
       '/coverage-time',
-      '/income'
+      '/income',
+      '/gender',
+      '/month',
+      '/day',
+      '/year',
+      '/tabacco',
+      '/spouse',
+      '/address',
+      '/name',
+      '/email-phone',
+      '/thank-you',
     ],
 
     // For Post 
@@ -43,60 +63,96 @@ class App extends Component {
       health_insurance_plan: '',
       coverage_time: '',
       household_income: '',
-
-    }
+      gender: '',
+      month: '',
+      day: '',
+      year: '',
+      dob: '',
+      tobacco_use: '',
+      additional_insured: '',
+      household_size: '2',
+      pre_existing_conditions: 'false',
+      weight: '',
+      height: '',
+      address: '',
+      first_name: '',
+      last_name: '',
+      phone_home: '',
+      email_address: '',
+      }
 
   }
 
-
-    // Handle change Route
-    changeRoute = () => {
-      this.setState({
-        route: '',
-      });
+  copyValuesToPostData2 = () => {
+    var tempArray = {
+      zip: this.state.postData.zip_code,
     };
-  
+    this.setState({ postData2: tempArray });
+    // var MediaAlphaExchange = { 
+    // 	"data": {
+    // 	   "zip": "",
+    // 	},
+    // 	"placement_id": "YiPFAJc_r0i9fsZr0uP7vvicsinK3Q",
+    // 	"sub_1": "test sub id",
+    // 	"type": "ad_unit",
+    // 	"version": 17
+    //  };
+     console.log("SetMA");
+//MediaAlphaExchange__load('mediaalpha_placeholder');
+    return this.state.postData2;
+  };
+
+
+  // Handle change Route
+  changeRoute = () => {
+    this.setState({
+      route: '',
+    });
+  };
+
 
   render() {
     return (
-      
+
       <BrowserRouter>
-      <div>
-        <NavBar />
-        <Switch>
+        <div>
+          <NavBar />
+          <Switch>
 
-          {/* Landing Page */}
-          <Route path='/' exact >
-            <LandingPage 
+            {/* Landing Page */}
+            <Route path='/' exact >
+              <LandingPage
 
-              setZipCode={(v) => {
-                this.setState({
-                  postData: {
-                    ...this.state.postData,
-                    zip_code: v,
-                  },
-                });
-              }}
+                setZipCode={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      jornaya_lead_id: document.getElementById('leadid_token').value,
+                      trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
+                      zip_code: v,
+                    },
+                  });
+                }}
 
-            />
-          </Route>
+              />
+            </Route>
 
-          {/* Step 2 - Health Insurance Plan */}
-          <Route path='/health-plan' exact>
+            {/* Step 2 - Health Insurance Plan */}
+            <Route path='/health-plan' exact>
               <HealthPlan
-                  setPlan={(v) => {
-                    this.setState({
-                      postData: {
-                        ...this.state.postData,
-                        health_insurance_plan: v,
-                      },
-                    });
-                  }}
+                setPlan={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      health_insurance_plan: v,
+                    },
+                  });
+                }}
               />
             </Route>
 
             <Route path='/coverage-time' exact>
-                <CoverageTime
+              <CoverageTime
                 setCoverTime={(v) => {
                   this.setState({
                     postData: {
@@ -105,7 +161,7 @@ class App extends Component {
                     },
                   });
                 }}
-                />
+              />
             </Route>
 
             <Route path='/income' exact>
@@ -122,9 +178,199 @@ class App extends Component {
               />
             </Route>
 
-        </Switch>
-      </div>
-      
+            <Route path='/gender' exact>
+              <Gender
+                setGender={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      gender: v,
+                    },
+                  });
+                }}
+              />
+            </Route>
+
+            <Route path='/month' exact>
+              <Month
+                setMonth={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      month: v,
+                    },
+                  });
+                }}
+              />
+            </Route>
+
+            <Route path='/day' exact>
+
+              <Day
+                setDate={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      day: v,
+                    },
+                  });
+                }}
+              />
+
+            </Route>
+
+            <Route path='/year' exact>
+
+              <Year
+                setDOB={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      dob: v,
+                    },
+                  });
+                }}
+              />
+            </Route>
+
+            <Route path='/tabacco' exact >
+              <Tabacco
+                setTabacco={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      tobacco_use: v,
+                    },
+                  });
+                }}
+              />
+
+            </Route>
+
+            <Route path='/spouse' exact>
+              <Spouse
+                setSpouse={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      additional_insured: v,
+                    },
+                  });
+                }}
+              />
+
+            </Route>
+
+            <Route path='/height-weight' exact>
+
+              <HeightWeight
+                setWeight={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      weight: v,
+                    },
+                  });
+                }}
+
+                setHeight={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      height: v,
+                    },
+                  });
+                }}
+              />
+            </Route>
+
+            <Route path='/address' exact>
+              <Address
+
+                setAddress={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      address: v,
+                    },
+                  });
+                }}
+              />
+            </Route>
+
+            <Route path="/name" exact>
+              <Name
+                setFName={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      first_name: v,
+                    },
+                  });
+
+
+                }}
+
+                setLName={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      last_name: v,
+                    },
+                  });
+                }}
+              />
+            </Route>
+
+            <Route path='/email-phone' exact>
+              <EmailPhone
+                 email_address={this.state.postData.email_address}
+                 phone_home={this.state.postData.phone_home}
+ 
+                 setEmail={(v) => {
+                   this.setState({
+                     postData: {
+                       ...this.state.postData,
+                       email_address: v,
+                     },
+                   });
+                 }}
+ 
+                 setPhone={(v) => {
+                   this.setState({
+                     postData: {
+ 
+                       ...this.state.postData,
+                       phone_home: v,
+                     },
+                   });
+                 }}
+ 
+                 setURL={(v) => {
+                   this.setState({
+                     postData: {
+                       ...this.state.postData,
+                       entrance_url: v,
+                     }
+                   })
+                 }}
+ 
+ 
+                 postData={this.state.postData}
+              />
+            </Route>
+
+            
+            <Route path='/thank-you' exact>
+              <ThankYou
+
+                postData2={this.state.postData}
+    
+              />
+            </Route>
+          </Switch>
+        </div>
+
       </BrowserRouter>
     )
   }
