@@ -30,12 +30,11 @@ class Address extends Component {
     const urlParams = new URLSearchParams(urlSearch);
 
     const zip = urlParams.get('zip_code');
-    const plan = urlParams.get('health_insurance_plan');
+    const pre = urlParams.get('pre_existing_conditions');
     const time = urlParams.get('coverage_time')
     const income = urlParams.get('household_income');
     const gender = urlParams.get('gender');
-    const tabacco = urlParams.get('tabacco_use');
-    const spouse = urlParams.get('additional_insured');
+    const people = urlParams.get('household_size');
     const weight = urlParams.get('weight');
     const height = urlParams.get('height');
 
@@ -53,7 +52,7 @@ class Address extends Component {
 
     this.props.setAddress(address);
 
-    this.props.history.push('/name' + '?zip_code=' + zip + '&health_insurance_plan=' + plan + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&tabacco_use=' + tabacco + '&additional_insured=' + spouse + '&weight=' + weight + '&height=' + height + '&address=' + address);
+    this.props.history.push('/name' + '?zip_code=' + zip + '&health_insurance_plan=ACA_Plan'  + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&pre_existing_conditions=' + pre + '&household_size=' + people + '&weight=' + weight + '&height=' + height + '&address=' + address);
     }
       
   }
@@ -75,13 +74,13 @@ class Address extends Component {
 
                                 <div className="text-right">
                                     <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200">
-                                        75%
+                                        83%
                                     </span>
                                 </div>
                             </div>
                             <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-100">
 
-                                <div style={{ width: "75%" }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"></div>
+                                <div style={{ width: "83%" }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"></div>
 
                             </div>
                         </div>

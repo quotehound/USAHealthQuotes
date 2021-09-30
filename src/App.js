@@ -11,8 +11,8 @@ import Gender from './components/Gender';
 import Month from './components/Month';
 import Day from './components/Day';
 import Year from './components/Year';
-import Tabacco from './components/Tabacco';
-import Spouse from './components/Spouse';
+import PreExist from './components/Preexist';
+import Household from './components/NumberOfPeople';
 import HeightWeight from './components/HeightWeight';
 import Address from './components/Address';
 import Name from './components/Name';
@@ -34,8 +34,9 @@ class App extends Component {
       '/month',
       '/day',
       '/year',
-      '/tabacco',
-      '/spouse',
+      '/preexist',
+      '/household',
+      '/height-weight',
       '/address',
       '/name',
       '/email-phone',
@@ -46,11 +47,11 @@ class App extends Component {
 
     postData: {
 
-      lp_campaign_id: '60ec904883e96',
-      lp_campaign_key: 'HdnykrcQ76bVq8BtWmFK',
+      lp_campaign_id: '60adbd314c992',
+      lp_campaign_key: 'j3xtKfTcYkw2PFJG9ZLh',
       lp_s1: '12',
       lp_s2: '13',
-      landing_Page: 'usahealthquotes.com',
+      landing_page: 'usahealthquotes.com',
       TCPA_Consent: 'Yes',
       TCPA_Language:
         'By clicking Get My Quote I provide my electronic signature and express written consent to telemarketing calls, text messages, emails, and postal mail from this Web site, our marketing and re-marketing network, and up to eight insurance companies or their affiliates or representatives at the phone number (including wireless number), email address, and postal address provided by me. I consent to calls and text messages transmitting insurance quotes, or seeking related additional information from me, using an Automatic Telephone Dialing System or prerecorded or artificial voices. I consent that my signature is not a condition of purchasing any property, goods, or services and that I may revoke my consent at any time.',
@@ -60,7 +61,7 @@ class App extends Component {
       user_agent: navigator.userAgent,
 
       zip_code: '',
-      health_insurance_plan: '',
+      health_insurance_plan: 'ACA Plan',
       coverage_time: '',
       household_income: '',
       gender: '',
@@ -68,10 +69,10 @@ class App extends Component {
       day: '',
       year: '',
       dob: '',
-      tobacco_use: '',
-      additional_insured: '',
-      household_size: '2',
-      pre_existing_conditions: 'false',
+      tobacco_use: 'no',
+      additional_insured: 'no',
+      household_size: '',
+      pre_existing_conditions: '',
       weight: '',
       height: '',
       address: '',
@@ -127,8 +128,6 @@ class App extends Component {
                   this.setState({
                     postData: {
                       ...this.state.postData,
-                      jornaya_lead_id: document.getElementById('leadid_token').value,
-                      trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
                       zip_code: v,
                     },
                   });
@@ -157,6 +156,8 @@ class App extends Component {
                   this.setState({
                     postData: {
                       ...this.state.postData,
+                      jornaya_lead_id: document.getElementById('leadid_token').value,
+                      trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
                       coverage_time: v,
                     },
                   });
@@ -233,13 +234,13 @@ class App extends Component {
               />
             </Route>
 
-            <Route path='/tabacco' exact >
-              <Tabacco
+            <Route path='/preexist' exact >
+              <PreExist
                 setTabacco={(v) => {
                   this.setState({
                     postData: {
                       ...this.state.postData,
-                      tobacco_use: v,
+                      pre_existing_conditions: v,
                     },
                   });
                 }}
@@ -247,13 +248,13 @@ class App extends Component {
 
             </Route>
 
-            <Route path='/spouse' exact>
-              <Spouse
+            <Route path='/household' exact>
+              <Household 
                 setSpouse={(v) => {
                   this.setState({
                     postData: {
                       ...this.state.postData,
-                      additional_insured: v,
+                      household_size: v,
                     },
                   });
                 }}

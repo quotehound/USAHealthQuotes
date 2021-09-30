@@ -71,12 +71,11 @@ class EmailPhone extends Component {
         const urlParams = new URLSearchParams(urlSearch);
     
         const zip = urlParams.get('zip_code');
-        const plan = urlParams.get('health_insurance_plan');
+        const pre = urlParams.get('pre_existing_conditions');
         const time = urlParams.get('coverage_time')
         const income = urlParams.get('household_income');
         const gender = urlParams.get('gender');
-        const tabacco = urlParams.get('tabacco_use');
-        const spouse = urlParams.get('additional_insured');
+        const people = urlParams.get('household_size');
         const weight = urlParams.get('weight');
         const height = urlParams.get('height');
         const address = urlParams.get('address');
@@ -89,7 +88,7 @@ class EmailPhone extends Component {
             loading: true 
           }, this.postHealth(this.props.postData));
 
-          this.props.history.push('/thank-you' + '?zip_code=' + zip + '&health_insurance_plan=' + plan + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&tabacco_use=' + tabacco + '&additional_insured=' + spouse + '&weight=' + weight + '&height=' + height + '&address=' + address + '&first_name=' + fName + '&last_name=' + lName + '&email=' + email + '&phone_number=' + phone )
+          this.props.history.push('/thank-you' + '?zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&health_insurance_plan=ACA_Plan'  + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&pre_existing_conditions=' + pre + '&household_size=' + people + '&weight=' + weight + '&height=' + height + '&address=' + address + '&first_name=' + fName + '&last_name=' + lName + '&email=' + email + '&phone_number=' + phone )
     };
 
     postURL = (values) => {
@@ -98,19 +97,18 @@ class EmailPhone extends Component {
         const urlParams = new URLSearchParams(urlSearch);
     
         const zip = urlParams.get('zip_code');
-        const plan = urlParams.get('health_insurance_plan');
+        const pre = urlParams.get('pre_existing_conditions');
         const time = urlParams.get('coverage_time')
         const income = urlParams.get('household_income');
         const gender = urlParams.get('gender');
-        const tabacco = urlParams.get('tabacco_use');
-        const spouse = urlParams.get('additional_insured');
+        const people = urlParams.get('household_size');
         const weight = urlParams.get('weight');
         const height = urlParams.get('height');
         const address = urlParams.get('address');
         const fName = urlParams.get('first_name');
         const lName = urlParams.get('last_name');
 
-       let url = ('usahealthquotes.com' + '?zip_code=' + zip + '&health_insurance_plan=' + plan + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&tabacco_use=' + tabacco + '&additional_insured=' + spouse + '&weight=' + weight + '&height=' + height + '&address=' + address + '&first_name=' + fName + '&last_name=' + lName); 
+       let url = ('usahealthquotes.com' + '?zip_code=' + zip + '&health_insurance_plan=ACA_Plan'  + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&pre_existing_conditions=' + pre + '&household_size=' + people + '&weight=' + weight + '&height=' + height + '&address=' + address + '&first_name=' + fName + '&last_name=' + lName); 
 
     this.props.setURL(url)
 

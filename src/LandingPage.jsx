@@ -48,7 +48,7 @@ class LandingPage extends Component {
     
           console.log("updated props with value: ", zipValue);
     
-          this.props.history.push("/health-plan?zip_code=" +  zipValue);
+          this.props.history.push("/coverage-time?zip_code=" +  zipValue);
         }
           
       }
