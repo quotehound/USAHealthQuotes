@@ -63,7 +63,7 @@ class App extends Component {
       useragent: navigator.userAgent,
 
       zip_code: '',
-      health_insurance_plan: 'ACA Plan',
+      health_insurance_plan: 'Individual Family',
       coverage_time: '',
       household_income: '',
       gender: '',
