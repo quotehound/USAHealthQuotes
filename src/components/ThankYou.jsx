@@ -15,6 +15,8 @@ class ThankYou extends Component {
 
       const phone = urlParams.get('phone_home');
 
+      const tele = document.getElementById('tele').value;
+
       console.log(phone)
         return (
 
@@ -47,7 +49,7 @@ class ThankYou extends Component {
 
 
           </div>
-          <ConnectStreams moduleId="1586" phoneNumber={phone}  />
+          <ConnectStreams moduleId="1586" phoneNumber={tele}  />
 
           </div>
   
