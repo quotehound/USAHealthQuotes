@@ -80,6 +80,7 @@ class App extends Component {
       last_name: '',
       phone_home: '',
       email_address: '',
+      entrance_url: '',
       }
 
   }
