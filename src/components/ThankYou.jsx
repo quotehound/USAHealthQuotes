@@ -13,8 +13,9 @@ class ThankYou extends Component {
 
       const firstName = urlParams.get('first_name');
 
+      const phone = urlParams.get('phone_home');
 
-         const phone = document.getElementById('tele').value;
+      console.log(phone)
         return (
 
           
