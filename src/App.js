@@ -18,6 +18,7 @@ import Address from './components/Address';
 import Name from './components/Name';
 import EmailPhone from './components/EmailPhone';
 import ThankYou from './components/ThankYou';
+import Match from './components/Lottie';
 class App extends Component {
 
 
@@ -40,6 +41,7 @@ class App extends Component {
       '/address',
       '/name',
       '/email-phone',
+      '/match',
       '/thank-you',
     ],
 
@@ -81,6 +83,7 @@ class App extends Component {
       phone_home: '',
       email_address: '',
       entrance_url: '',
+      lp_request_id:'',
       }
 
   }
@@ -130,6 +133,8 @@ class App extends Component {
                     postData: {
                       ...this.state.postData,
                       zip_code: v,
+                      lp_request_id: document.getElementById('lp').value,
+
                     },
                   });
                 }}
@@ -361,6 +366,8 @@ class App extends Component {
                  postData={this.state.postData}
               />
             </Route>
+
+            <Route path='/match' component={Match} />
 
             
             <Route path='/thank-you' exact>

@@ -43,12 +43,18 @@ class LandingPage extends Component {
           console.log("success: ", zipValue);
     
           this.setState({zip_code: zipValue})
+
+          const urlSearch = window.location.search;
+
+          const urlParams = new URLSearchParams(urlSearch);
+
+          const lp = urlParams.get('lp_request_id');
     
           this.props.setZipCode(zipValue);
     
           console.log("updated props with value: ", zipValue);
     
-          this.props.history.push("/coverage-time?zip_code=" +  zipValue);
+          this.props.history.push('/coverage-time' + '?lp_request_id=' + lp + '&zip_code=' +  zipValue);
         }
           
       }

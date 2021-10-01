@@ -72,6 +72,7 @@ class EmailPhone extends Component {
     
         const zip = urlParams.get('zip_code');
         const pre = urlParams.get('pre_existing_conditions');
+        const lp = urlParams.get('lp_request_id')
         const time = urlParams.get('coverage_time')
         const income = urlParams.get('household_income');
         const gender = urlParams.get('gender');
@@ -88,7 +89,7 @@ class EmailPhone extends Component {
             loading: true 
           }, this.postHealth(this.props.postData));
 
-          this.props.history.push('/thank-you' + '?zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&health_insurance_plan=ACA_Plan'  + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&pre_existing_conditions=' + pre + '&household_size=' + people + '&weight=' + weight + '&height=' + height + '&address=' + address + '&first_name=' + fName + '&last_name=' + lName + '&email=' + email + '&phone_number=' + phone )
+          this.props.history.push('/thank-you' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&health_insurance_plan=ACA_Plan'  + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&pre_existing_conditions=' + pre + '&household_size=' + people + '&weight=' + weight + '&height=' + height + '&address=' + address + '&first_name=' + fName + '&last_name=' + lName + '&email=' + email + '&phone_number=' + phone )
     };
 
     postURL = (values) => {
@@ -98,6 +99,7 @@ class EmailPhone extends Component {
     
         const zip = urlParams.get('zip_code');
         const pre = urlParams.get('pre_existing_conditions');
+        const lp = urlParams.get('lp_request_id')
         const time = urlParams.get('coverage_time')
         const income = urlParams.get('household_income');
         const gender = urlParams.get('gender');
@@ -109,6 +111,8 @@ class EmailPhone extends Component {
         const lName = urlParams.get('last_name');
 
        let url = window.location.href;
+
+       document.getElementById('url').value = url; 
 
     this.props.setURL(url)
 

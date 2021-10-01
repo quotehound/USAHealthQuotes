@@ -23,7 +23,9 @@ class HealthPlan extends Component {
 
         const zip = urlParams.get('zip_code');
 
-        this.props.history.push('/coverage-time' + '?zip_code=' + zip + '&health_insurance_plan=ACA_Plan');
+        const lp = urlParams.get('lp_request_id')
+
+        this.props.history.push('/coverage-time' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan');
     }
 
 

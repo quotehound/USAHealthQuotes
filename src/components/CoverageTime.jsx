@@ -22,9 +22,10 @@ class CoverageTime extends Component {
         const urlParams = new URLSearchParams(urlSearch);
 
         const zip = urlParams.get('zip');
+        const lp = urlParams.get('lp_request_id')
         const plan = urlParams.get('plan');
 
-        this.props.history.push('/income' + '?zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + cover);
+        this.props.history.push('/income' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + cover);
     }
 
 

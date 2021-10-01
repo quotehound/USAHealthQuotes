@@ -45,7 +45,7 @@ class ThankYou extends Component {
 
           <MA />
 
-          </div>
+          </div>. 
 
 
           </div>

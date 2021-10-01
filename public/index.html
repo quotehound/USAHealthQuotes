@@ -64,12 +64,9 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-    <script> 
-      window.onbeforeunload = function(e) {
-        return "Are you sure you want to leave? You Can Save Hundreds!";
-      };
+
       
-      </script> 
+
   
   <!-- Generate a TrustedForm Certificate -->
   <script type="text/javascript">
@@ -105,6 +102,20 @@
     <input id="leadid_token" name="universal_leadid" type="hidden" value=""/>
 
     <input type="hidden" id="tele" name="tele" defaultValue />
+
+
+    <input type="hidden" id="lp" name="lp" /> 
+    <input type="hidden" id="url" name='url' />
+
+    <script> 
+      const urlSearch = window.location.search;
+
+      const urlParams = new URLSearchParams(urlSearch);
+
+      const lp = urlParams.get('lp_request_id');
+
+      document.getElementById('lp').value = lp;
+      </script> 
 
 
     </body>

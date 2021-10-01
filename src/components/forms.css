@@ -20,6 +20,11 @@ a {
     
 }
 
+.lot {
+    max-width: 30%;
+    margin: 0 auto;
+}
+
 
 .tcpa {
     font-size: 12px;

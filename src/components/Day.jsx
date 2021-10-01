@@ -20,13 +20,14 @@ class Day extends Component {
         const urlParams = new URLSearchParams(urlSearch);
 
         const zip = urlParams.get('zip_code');
+        const lp = urlParams.get('lp_request_id')
         const time = urlParams.get('coverage_time');
         const income = urlParams.get('household_income');
         const gender = urlParams.get('gender');
         const month = urlParams.get('month')
         
     
-        this.props.history.push('/year' + '?zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&month=' + month + '&date=' + d);
+        this.props.history.push('/year' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&month=' + month + '&date=' + d);
       
     }
 

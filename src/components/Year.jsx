@@ -28,6 +28,7 @@ class Year extends Component {
     const urlParams = new URLSearchParams(urlSearch);
 
     const zip = urlParams.get('zip_code');
+    const lp = urlParams.get('lp_request_id')
     //const plan = urlParams.get('health_insurance_plan');
     const time = urlParams.get('coverage_time');
     const income = urlParams.get('household_income');
@@ -55,7 +56,7 @@ class Year extends Component {
  this.props.setDOB(month + '/' + date + '/' + year)
 
       
- this.props.history.push('/preexist' + '?zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&month=' + month + '&date=' + date + '&year=' + year);
+ this.props.history.push('/preexist' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&month=' + month + '&date=' + date + '&year=' + year);
     }
       
   }

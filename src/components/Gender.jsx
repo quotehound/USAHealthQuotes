@@ -28,12 +28,13 @@ class Gender extends Component {
     const urlParams = new URLSearchParams(urlSearch);
 
     const zip = urlParams.get('zip_code');
+    const lp = urlParams.get('lp_request_id')
     //const plan = urlParams.get('health_insurance_plan');
     const time = urlParams.get('coverage_time')
     const income = urlParams.get('household_income')
     
 
-    this.props.history.push('/month' + '?zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + g);
+    this.props.history.push('/month' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + g);
 
   }
 

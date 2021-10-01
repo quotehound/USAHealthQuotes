@@ -30,6 +30,7 @@ class Address extends Component {
     const urlParams = new URLSearchParams(urlSearch);
 
     const zip = urlParams.get('zip_code');
+    const lp = urlParams.get('lp_request_id')
     const pre = urlParams.get('pre_existing_conditions');
     const time = urlParams.get('coverage_time')
     const income = urlParams.get('household_income');
@@ -52,7 +53,7 @@ class Address extends Component {
 
     this.props.setAddress(address);
 
-    this.props.history.push('/name' + '?zip_code=' + zip + '&health_insurance_plan=ACA_Plan'  + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&pre_existing_conditions=' + pre + '&household_size=' + people + '&weight=' + weight + '&height=' + height + '&address=' + address);
+    this.props.history.push('/name' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan'  + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&pre_existing_conditions=' + pre + '&household_size=' + people + '&weight=' + weight + '&height=' + height + '&address=' + address);
     }
       
   }
