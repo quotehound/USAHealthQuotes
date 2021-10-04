@@ -51,8 +51,8 @@ class App extends Component {
 
       lp_campaign_id: '60adbd314c992',
       lp_campaign_key: 'j3xtKfTcYkw2PFJG9ZLh',
-      lp_s1: '12',
-      lp_s2: '13',
+      lp_s4: '12',
+      lp_s5: '13',
       landing_page: 'usahealthquotes.com',
       TCPA_Consent: 'Yes',
       TCPA_Language:
