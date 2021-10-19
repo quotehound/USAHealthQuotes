@@ -132,6 +132,8 @@ class App extends Component {
                   this.setState({
                     postData: {
                       ...this.state.postData,
+                        jornaya_lead_id: document.getElementById('leadid_token').value,
+                      trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
                       zip_code: v,
                       lp_request_id: document.getElementById('lp').value,
 
@@ -162,8 +164,6 @@ class App extends Component {
                   this.setState({
                     postData: {
                       ...this.state.postData,
-                      jornaya_lead_id: document.getElementById('leadid_token').value,
-                      trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
                       coverage_time: v,
                     },
                   });
