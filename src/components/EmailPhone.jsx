@@ -220,7 +220,7 @@ class EmailPhone extends Component {
                                     <div>
                                         <div className="relative flex justify-center text-sm leading-5 con">
                                             <span className="px-2 text-black-500 text-3xl bold header">
-                                                You're Almost There, {firstName}!
+                                                {firstName}, Last Step!
                                             </span>
                                         </div>
                                     </div>
