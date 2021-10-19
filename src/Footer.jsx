@@ -17,6 +17,7 @@ class Footer extends Component {
                   <img className="h-7" src={Logo} alt="" width="auto" />
                 </a>
                 <p className="hidden lg:block text-sm text-gray-500" data-config-id="copy">All rights reserved © Quotehound 2021</p>
+  <p className="hidden lg:block text-sm text-gray-500" data-config-id="copy">Quotehound Inc. is not endorsed by or affiliated <br/> with Medicare or any government program.</p>
               </div>
 
             
@@ -36,6 +37,8 @@ class Footer extends Component {
           </div>
           <div className="container mx-auto px-4 lg:w-1/2 md:w-full text-center">
           <p className="text-sm text-center text-gray-500"> This is a commercial site designed for the solicitation of insurance from selected health and Life insurance carriers. It is not an insurer, an insurance agency, or a medical provider. Insurance agency services may be provided by a partner licensed agency. This site is not maintained by or affiliated with the federal government’s Health Insurance Marketplace website or any state government health insurance marketplace</p>
+
+ <p className="text-sm text-center text-gray-500">Invitations for application for insurance via usahealthquotes.com are made through Quotehound, Inc. or through its designated agent(s), Devanand Gaymes, only where licensed and appointed. License numbers are available here or upon request and are automatically provided where required by law.  Devanand Gaymes is a licensed General Lines Health Insurance agent in the State of Texas. Devanand Gaymes' Texas license number is 1897511</p>
           </div>
         </section>
     
