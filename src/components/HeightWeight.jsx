@@ -91,15 +91,26 @@ class HeightWeight extends Component {
 
   }
 
-  setHeight = (values) => {
+  // setHeight = (values) => {
 
+  //   let feet = document.getElementById('feet').value;
+  //   let inch = document.getElementById('inches').value;
+
+  //   let height = feet + "'" + inch;
+
+  //   this.props.setHeight(height);
+
+  // }
+
+  setFeet = (values) => {
     let feet = document.getElementById('feet').value;
+    this.props.setFeet(feet)
+  }
+
+  setInch = (values) => {
+
     let inch = document.getElementById('inches').value;
-
-    let height = feet + "'" + inch;
-
-    this.props.setHeight(height);
-
+    this.props.setInches(inch)
   }
 
 
@@ -162,10 +173,10 @@ class HeightWeight extends Component {
 
                         <div className=" flex justify-center text-center mt-10 -mx-2 max-w-md">
                   <div className="mb-4 w-full lg:w-1/2 px-2  flex justify-center text-center">
-                    <input className="w-full p-4 text-xs bg-gray-50 outline-none rounded zipInput" type="text" placeholder="Feet"  pattern="\d*" id="feet" maxLength={1} onChange={this.setHeight} />
+                    <input className="w-full p-4 text-xs bg-gray-50 outline-none rounded zipInput" type="text" placeholder="Feet"  pattern="\d*" id="feet" maxLength={1} onChange={this.setFeet} />
                   </div>
                   <div className="mb-4 w-full lg:w-1/2 px-2">
-                    <input className="w-full p-4 text-xs bg-gray-50 outline-none rounded zipInput" type="text" placeholder="Inches"  pattern="\d*" id="inches" maxLength={2} onChange={this.setHeight} />
+                    <input className="w-full p-4 text-xs bg-gray-50 outline-none rounded zipInput" type="text" placeholder="Inches"  pattern="\d*" id="inches" maxLength={2} onChange={this.setInch} />
                   </div>
                 </div>
 

@@ -76,8 +76,14 @@ class Income extends Component {
                       <div className="text-sm leading-5 buttonBlockRow">
 
 
-                        <button className="monthButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="10000" onClick={this.income}>$0 - <br/>$10,000</button> 
-                        <button className="monthButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="30000" onClick={this.income}>$10,0001 - $30,000</button> <button className="monthButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="55000" onClick={this.income}>$30,0001 - $55,000</button> <button className="monthButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="70000" onClick={this.income}>$55,0001 - $70,000</button> <button className="monthButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="100000" onClick={this.income}>$70,0001 - $100,000</button> <button className="monthButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="100000" onClick={this.income}>$100,001+<br/></button>
+                        <button className="monthButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="10000" onClick={this.income}>$0 - <br/>$15,000</button> 
+
+                        <button className="monthButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="39000" onClick={this.income}>$15,001 - <br/>$39,000</button> 
+
+                        <button className="monthButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="50000" onClick={this.income}>$39,001 - <br/>$50,000</button> 
+                        <button className="monthButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="65000" onClick={this.income}>$50,001 - <br/>$65,000</button> 
+                        <button className="monthButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="100000" onClick={this.income}>$65,001 - <br/>$100,000+</button> 
+
 
                       </div>
                     </div>

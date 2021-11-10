@@ -5,6 +5,8 @@ import './LandingPage.css';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import Bugsnag from '@bugsnag/js'
+import BugsnagPluginReact from '@bugsnag/plugin-react'
 
 
 import Logo from './Assets/usahq.png';
@@ -25,6 +27,7 @@ class LandingPage extends Component {
     
         this.nextStep = this.nextStep.bind(this);
         this.nextStep = this.nextStep.bind(this);
+
       }
 
       nextStep = (values) => {

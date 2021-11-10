@@ -76,7 +76,8 @@ class App extends Component {
       household_size: '',
       pre_existing_conditions: '',
       weight: '',
-      height: '',
+      feet: '',
+      inches: '',
       address: '',
       first_name: '',
       last_name: '',
@@ -280,14 +281,24 @@ class App extends Component {
                   });
                 }}
 
-                setHeight={(v) => {
+                setFeet={(v) => {
                   this.setState({
                     postData: {
                       ...this.state.postData,
-                      height: v,
+                      feet: v,
                     },
                   });
                 }}
+
+                setInches={(v) => {
+                  this.setState({
+                    postData: {
+                      ...this.state.postData,
+                      inches: v,
+                    },
+                  });
+                }}
+                
               />
             </Route>
 

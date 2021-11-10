@@ -4,12 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router} from 'react-router-dom';
+import Bugsnag from '@bugsnag/js'
+import BugsnagPluginReact from '@bugsnag/plugin-react'
 
+Bugsnag.start({
+  apiKey: 'd0433c79708991b146c75751443f93c0',
+  plugins: [new BugsnagPluginReact()]
+})
+
+
+const ErrorBoundary = Bugsnag.getPlugin('react')
+  .createErrorBoundary(React)
 
 ReactDOM.render(
+  <ErrorBoundary>
   <Router>
     <App />
-  </Router>,
+  </Router>
+  </ErrorBoundary>,
   document.getElementById('root')
 );
 
