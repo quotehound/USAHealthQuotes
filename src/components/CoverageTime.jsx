@@ -4,12 +4,33 @@ import { withRouter } from 'react-router';
 import './forms.css';
 
 import Footer from '../Footer.jsx'
+import $, {parse} from 'jquery'; 
 
 
-
+import { ToastContainer, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css';
 class CoverageTime extends Component {
 
-    coverage = (values) => {
+ 
+
+  coverage = (values) => {
+      
+    const urlSearch = window.location.search;
+
+    const urlParams = new URLSearchParams(urlSearch);
+
+    const zip = urlParams.get('zip_code');
+    const city = urlParams.get('city');
+    const state = urlParams.get('state');
+
+    document.getElementById('zipCode').value = zip;
+    document.getElementById('city').value = city;
+    document.getElementById('state').value = state;
+
+    const lp = urlParams.get('lp_request_id')
+    const plan = urlParams.get('plan');
+
+
 
         values.preventDefault();
         
@@ -17,19 +38,16 @@ class CoverageTime extends Component {
 
         this.props.setCoverTime(cover);
 
-        const urlSearch = window.location.search;
-
-        const urlParams = new URLSearchParams(urlSearch);
-
-        const zip = urlParams.get('zip');
-        const lp = urlParams.get('lp_request_id')
-        const plan = urlParams.get('plan');
+       
 
         this.props.history.push('/income' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + cover);
-    }
+  }
+  
 
 
-    render() {
+
+
+  render() {
         return (
             <div className="back bg-white"> 
        <div className="bg-blue-500 headerText justify-center align-middle text-center">

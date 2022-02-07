@@ -61,7 +61,9 @@ class App extends Component {
       IP_Address: '',
       useragent: navigator.userAgent,
 
-      zip_code: '',
+      zip_code: document.getElementById('zipCode'),
+      city: document.getElementById('city'),
+      state: document.getElementById('state'),
       health_insurance_plan: 'Individual Family',
       coverage_time: '',
       household_income: '',
@@ -134,7 +136,7 @@ class App extends Component {
                       ...this.state.postData,
                         jornaya_lead_id: document.getElementById('leadid_token').value,
                       trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
-                      zip_code: v,
+                      
                       lp_request_id: document.getElementById('lp').value,
 
                     },
