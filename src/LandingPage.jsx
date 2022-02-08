@@ -119,7 +119,8 @@ const urlParams = new URLSearchParams(urlSearch)
 const lp = urlParams.get('lp_request_id');
 const gclid = urlParams.get('gclid');
 
-this.props.setZipCode(zipValue);
+    this.props.setZipCode(zipValue);
+    this.props.setLp(lp)
 
 console.log('updated props with value: ', zipValue);
 this.props.history.push('/coverage-time' + '?lp_request_id=' + lp + '&zip_code=' +  zipValue);
