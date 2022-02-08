@@ -71,6 +71,8 @@ class LandingPage extends Component {
 
         else {
 
+          localStorage.clear();
+
           document.getElementById('submit').disabled = false;
 
           localStorage.setItem('zip', val);
