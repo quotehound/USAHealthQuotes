@@ -98,7 +98,8 @@ class LandingPage extends Component {
     }
   }
 
-nextStep(values) {
+  nextStep(values) {
+
 let zipValue = localStorage.getItem('zip');
 document.getElementById('submit').isDisabled = false;
 
