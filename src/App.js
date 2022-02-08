@@ -132,7 +132,7 @@ class App extends Component {
                   this.setState({
                     postData: {
                       ...this.state.postData,
-                      trusted_form_cert_id: document.getElementById('tform').value,
+                      trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
   
                     },
                   });
