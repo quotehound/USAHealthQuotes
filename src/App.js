@@ -161,7 +161,7 @@ class App extends Component {
                     postData: {
                       ...this.state.postData,
                       health_insurance_plan: v,
-                      trusted_form_cert_id: document.getElementById('trusted_form_cert_id_0').value,
+                      trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
                     },
                   }
                  );

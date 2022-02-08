@@ -132,9 +132,7 @@
 
       document.getElementById('lp').value = lp;
 
-      let tform = document.getElementById('trusted_form_cert_id_0').value;
-
-      localStorage.setItem('tform', tform)
+     
       </script> 
 
     
@@ -160,6 +158,10 @@
     tf.src = ("https:" == document.location.protocol ? 'https' : 'http') + "://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&provide_referrer=false&invert_field_sensitivity=false&sandbox=false&l=" + new Date().getTime() + Math.random();
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
     })();
+
+    let tform = document.getElementById('xxTrustedFormToken_0').value;
+
+localStorage.setItem('tform', tform)
     </script>
     <noscript>
     <img src="http://api.trustedform.com/ns.gif" />
