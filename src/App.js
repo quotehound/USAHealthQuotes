@@ -146,7 +146,7 @@ class App extends Component {
                      
                     }
                   })
-                  console.log(this.props.postData)
+                  console.log(this.state.postData)
 
                 }}
 
@@ -165,7 +165,7 @@ class App extends Component {
                     },
                   }
                  );
-                 console.log(this.props.postData)
+                 console.log(this.state.postData)
 
                 }
                 }
