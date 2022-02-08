@@ -89,15 +89,14 @@ class LandingPage extends Component {
 
         document.getElementById('city').value = city;
           document.getElementById('state').value = state; 
-          this.nextStep();
 
         }
 
         
-      })
+      }
 
-      
-
+      )
+    
     }
   }
 
@@ -120,7 +119,7 @@ const urlParams = new URLSearchParams(urlSearch)
 const lp = urlParams.get('lp_request_id');
 const gclid = urlParams.get('gclid');
 
-    
+    this.props.setLp(lp)
 
 console.log('updated props with value: ', zipValue);
 this.props.history.push('/coverage-time' + '?lp_request_id=' + lp + '&zip_code=' +  zipValue);

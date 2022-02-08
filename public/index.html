@@ -45,6 +45,8 @@
       document.getElementById("zip").value = zip;
       document.getElementById("city").value = city;
       document.getElementById("state").value = state;
+
+      
     });
   </script>
 
@@ -129,6 +131,10 @@
       const lp = urlParams.get('lp_request_id');
 
       document.getElementById('lp').value = lp;
+
+      let tform = document.getElementById('trusted_form_cert_id_0').value;
+
+      localStorage.setItem('tform', tform)
       </script> 
 
     
@@ -144,6 +150,19 @@
   })();
   </script>
   <noscript><img src='//create.leadid.com/noscript.gif?lac=45a2434e-3343-bea3-12ad-6220f9a33148&lck=34d2f2a1-8501-5c98-0b11-a2d0480484fe&snippet_version=2' /></noscript>
-   
+
+
+  <script type="text/javascript">
+    (function() {
+      var
+    var tf = document.createElement('script');
+    tf.type = 'text/javascript'; tf.async = true;
+    tf.src = ("https:" == document.location.protocol ? 'https' : 'http') + "://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&provide_referrer=false&invert_field_sensitivity=false&sandbox=false&l=" + new Date().getTime() + Math.random();
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
+    })();
+    </script>
+    <noscript>
+    <img src="http://api.trustedform.com/ns.gif" />
+    </noscript>
     </body>
 </html>

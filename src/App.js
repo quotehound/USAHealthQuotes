@@ -142,10 +142,11 @@ class App extends Component {
                     postData: {
                       ...this.state.postData,
                       lp_request_id: u,
+                      jornaya_lead_id: document.getElementById('leadid_token').value
                      
                     }
                   })
-                  console.log(this.state.postData)
+                  console.log(this.props.postData)
 
                 }}
 
@@ -160,12 +161,11 @@ class App extends Component {
                     postData: {
                       ...this.state.postData,
                       health_insurance_plan: v,
-                      trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
-                      jornaya_lead_id: document.getElementById('leadid_token').value
+                      trusted_form_cert_id: document.getElementById('trusted_form_cert_id_0').value,
                     },
                   }
                  );
-                 console.log(this.state.postData)
+                 console.log(this.props.postData)
 
                 }
                 }
