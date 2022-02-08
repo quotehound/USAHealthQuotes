@@ -73,7 +73,6 @@ class LandingPage extends Component {
 
           localStorage.clear();
 
-          document.getElementById('submit').disabled = false;
 
           localStorage.setItem('zip', val);
 
@@ -90,8 +89,8 @@ class LandingPage extends Component {
 
         document.getElementById('city').value = city;
           document.getElementById('state').value = state; 
+          this.nextStep();
 
-          this.nextStep(values)
         }
 
         
@@ -121,8 +120,7 @@ const urlParams = new URLSearchParams(urlSearch)
 const lp = urlParams.get('lp_request_id');
 const gclid = urlParams.get('gclid');
 
-    this.props.setZipCode(zipValue);
-    this.props.setLp(lp)
+    
 
 console.log('updated props with value: ', zipValue);
 this.props.history.push('/coverage-time' + '?lp_request_id=' + lp + '&zip_code=' +  zipValue);

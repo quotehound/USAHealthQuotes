@@ -56,8 +56,6 @@ class App extends Component {
       landing_page: 'usahealthquotes.com',
       TCPA_Consent: 'Yes',
       TCPA_Language: 'By hitting Get My Free Quote above, I provide my express written consent to the following. Telemarketing calls, text messages, emails, and postal mail from this Web site, our marketing and re-marketing network, and up to eight insurance companies or their affiliates or representatives at the phone number (including wireless number), email address, and postal address provided by me. Telemarketing calls, text messages, emails, and postal mail (including wireless number), email address, and postal address provided by me. Calls and text messages transmitting insurance quotes, or seeking related additional information from me, using an Automated Telephone Dialing System or prerecorded or artificial voices. Electronic video monitoring and recordation of my activities on this Site. I also understand that my agreement to be contacted is not a condition of purchasing any property, goods, or services and that I may call (855) 701-3066 to speak with someone about obtaining an insurance quote. I acknowledge that I may revoke my consent by emailing “STOP” to optout@quotehound.com. I affirm that I have read and agree to this websites Privacy Policy and Terms of Use',
-      jornaya_lead_id: document.getElementById('leadid_token').value,
-      trusted_form_cert_id: '',
       IP_Address: '',
       user_agent: navigator.userAgent,
       zip_code: localStorage.getItem('zip'),
@@ -66,6 +64,7 @@ class App extends Component {
       health_insurance_plan: 'Individual Family',
       coverage_time: '',
       household_income: '',
+      trusted_form_cert_id: '',
       gender: '',
       month: '',
       day: '',
@@ -133,19 +132,21 @@ class App extends Component {
                   this.setState({
                     postData: {
                       ...this.state.postData,
-                      trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
-  
+                     
                     },
                   });
                 }}
 
-                setLp={(v) => {
+                setLp={(u) => {
                   this.setState({
                     postData: {
                       ...this.state.postData,
-                      lp_request_id: v
+                      lp_request_id: u,
+                     
                     }
                   })
+                  console.log(this.state.postData)
+
                 }}
 
               />
@@ -159,9 +160,16 @@ class App extends Component {
                     postData: {
                       ...this.state.postData,
                       health_insurance_plan: v,
+                      trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
+                      jornaya_lead_id: document.getElementById('leadid_token').value
                     },
-                  });
-                }}
+                  }
+                 );
+                 console.log(this.state.postData)
+
+                }
+                }
+
               />
             </Route>
 
