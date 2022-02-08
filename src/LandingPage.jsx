@@ -87,7 +87,9 @@ class LandingPage extends Component {
         localStorage.setItem('state', state);
 
         document.getElementById('city').value = city;
-          document.getElementById('state').value = state;
+          document.getElementById('state').value = state; 
+
+          this.nextStep(values)
         }
 
         
@@ -98,7 +100,7 @@ class LandingPage extends Component {
     }
   }
 
-  nextStep(values) {
+  nextStep = (values) => {
 
 let zipValue = localStorage.getItem('zip');
 document.getElementById('submit').isDisabled = false;
@@ -131,7 +133,9 @@ this.props.history.push('/coverage-time' + '?lp_request_id=' + lp + '&zip_code='
 
 
 
-    render() {
+  render() {
+    const zippy = localStorage.getItem('zip');
+
         return (
             <div>
                 {/* End of header with Form */}
@@ -156,9 +160,9 @@ this.props.history.push('/coverage-time' + '?lp_request_id=' + lp + '&zip_code='
       <h2 className="mt-8 mb-8 text-5xl lg:text-7xl text-white font-bold" data-config-id="header">Compare Multiple Health Insurance Quotes</h2>
       <form onSubmit={this.nextStep} >
 
-<div className="flex justify items-center formSection py-10">
-<input className="appearance-none w-1/2 p-3 text-lg font-semibold leading-none bg-white rounded zipInput " type="text" name="addressField" placeholder="Zip Code" pattern="\d*" value={this.state.value} id="zipCode" maxLength={5}/>
-<button className="px-6 py-4 mb-3 m-2 text-md font-bold bg-blue-400 hover:bg-blue-600 hover:shadow-lg text-white rounded transition duration-200 zipSubmit" type="submit">Start My Quote</button>
+<div className="flex justify items-center formSection py-10"><input className="appearance-none w-1/2 p-3 text-lg font-semibold leading-none text-center bg-white rounded zipInput " type="text" name="addressField" placeholder="Zip Code" pattern="\d*" defaultValue={zippy}  onChange={this.validateZip} id="zip" minLength={5} maxLength={5} />
+<button className="px-6 py-4 mb-3 m-2 text-md font-bold bg-blue-400 hover:bg-blue-600 hover:shadow-lg text-white rounded transition duration-200 zipSubmit" type="submit" id='submit' disabled={false}>Start My Quote</button>
+
 
 </div>
 

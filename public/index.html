@@ -18,6 +18,35 @@
     crossorigin="anonymous"
   ></script>
 
+  <script>
+    var requestOptions = {
+      async: true,
+      crossDomain: true,
+      method: "GET",
+      redirect: "follow",
+      url: "https://geolocation-db.com/json/8dd79c70-0801-11ec-a29f-e381a788c2c0",
+    };
+
+    $.ajax(requestOptions).done(function (response) {
+      console.log(response);
+
+      var parse = JSON.parse(response);
+
+      let zip = parse.postal;
+      let city = parse.city;
+      let state = parse.state;
+
+      localStorage.setItem("zip", zip);
+
+      localStorage.setItem("city", city);
+      localStorage.setItem("state", state);
+
+      document.getElementById("zipCode").value = zip;
+      document.getElementById("zip").value = zip;
+      document.getElementById("city").value = city;
+      document.getElementById("state").value = state;
+    });
+  </script>
 
     <script type="text/javascript">
       /* QuoteHound / Life TY - Premium */
