@@ -64,7 +64,6 @@ class App extends Component {
       health_insurance_plan: 'Individual Family',
       coverage_time: '',
       household_income: '',
-      trusted_form_cert_id: '',
       gender: '',
       month: '',
       day: '',
@@ -142,7 +141,9 @@ class App extends Component {
                     postData: {
                       ...this.state.postData,
                       lp_request_id: u,
-                      jornaya_lead_id: document.getElementById('leadid_token').value
+                      jornaya_lead_id: document.getElementById('leadid_token').value,
+                      trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
+
                      
                     }
                   })
@@ -160,8 +161,7 @@ class App extends Component {
                   this.setState({
                     postData: {
                       ...this.state.postData,
-                      health_insurance_plan: v,
-                      trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
+                      health_insurance_plan: v
                     },
                   }
                  );
