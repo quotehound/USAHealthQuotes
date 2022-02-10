@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import NavBar from './NavBar';
 import LandingPage from './LandingPage';
+import Age from './Age'
 import HealthPlan from './components/HealthPlan';
 import CoverageTime from './components/CoverageTime';
 import Income from './components/Income';
@@ -28,6 +29,7 @@ class App extends Component {
     route: '/',
     routes: [
       '/',
+      '/age',
       '/health-plan',
       '/coverage-time',
       '/income',
@@ -152,6 +154,11 @@ class App extends Component {
                 }}
 
               />
+            </Route>
+
+            <Route path='/age' exact>
+              <Age/>
+
             </Route>
 
             {/* Step 2 - Health Insurance Plan */}
