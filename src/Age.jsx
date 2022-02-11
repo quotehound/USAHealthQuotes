@@ -31,7 +31,7 @@ class Age extends Component {
     const rf = 'usahealthquotes.com';
     const hp = 'Individual Family';
 
-    window.location.href = 'https://www.usmedicarequotes.com/enrolled' + '?lp=' + lp + '&zip_code=' +  zip + '&city=' + city + '&state=' + state + '&refferal_url=' + rf + '&health_insurance_plan=' + hp + '&pre_existing_conditions= no';
+    window.location.href = 'https://www.usmedicarequotes.com/enrolled' + '?lp=' + lp + '&zip=' +  zip + '&city=' + city + '&state=' + state + '&refferal_url=' + rf + '&health_insurance_plan=' + hp + '&pre_existing_conditions= no';
 
 
   }
