@@ -11,23 +11,91 @@ import { ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css';
 class CoverageTime extends Component {
 
+  componentDidMount() {
+
+    setTimeout(() => {
+
+      document.getElementById('zipCode').value = '';
+      document.getElementById('city').value = '';
+      document.getElementById('state').value = '';
+    
+      console.log('on load function started')
+      const urlSearch = window.location.search;
+  
+      const urlParams = new URLSearchParams(urlSearch);
+  
+      const newZip = urlParams.get('zip');
+      const newCity = urlParams.get('city');
+      const newState = urlParams.get('state');
+      const rf = urlParams.get('refferal_url');
+      const lp = urlParams.get('lp');
+      const hp = urlParams.get('health_insurance_plan')
+      const pec = urlParams.get('pre_existing_conditions');
+
+      console.log('zip code is ', newZip)
+      console.log('City is ', newCity)
+      console.log('State is ', newState)
+      
+
+      document.getElementById('hp').value = hp;
+      document.getElementById('pec').value = pec;
+      document.getElementById('zipCode').value = newZip;
+      document.getElementById('city').value = newCity;
+      document.getElementById('state').value = newState;
+
+
+      localStorage.setItem('zip', newZip)
+      localStorage.setItem('city', newCity)
+      localStorage.setItem('state', newState)
+
+ 
+      if (lp === null) {
+        document.getElementById('lp').value = '';
+        localStorage.setItem('lp', '')
+
+        console.log('lp was null')
+      }
+      else {
+        document.getElementById('lp').value = lp;
+
+        localStorage.setItem('lp', lp)
+        console.log('lp was present')
+
+      }
+      if (rf) {
+        console.log('rf was true');
+  
+    }
+  
+    }, 0)
+  
+
+
+  }
  
 
   coverage = (values) => {
       
     const urlSearch = window.location.search;
 
-    const urlParams = new URLSearchParams(urlSearch);
+        const urlParams = new URLSearchParams(urlSearch);
+    
+        const zip = urlParams.get('zip');
+      var lp = urlParams.get('lp_request_id');
 
-    const zip = urlParams.get('zip_code');
-    const city = urlParams.get('city');
-    const state = urlParams.get('state');
 
-    document.getElementById('zipCode').value = zip;
-    document.getElementById('city').value = city;
-    document.getElementById('state').value = state;
+      if (lp === null) {
 
-    const lp = urlParams.get('lp_request_id')
+        var lp = ''
+        localStorage.setItem('lp', lp)
+      }
+      else {
+        var lp = urlParams.get('lp_request_id')
+        localStorage.setItem('lp', lp)
+      }
+
+    console.log(localStorage)
+    
     const plan = urlParams.get('plan');
 
 
