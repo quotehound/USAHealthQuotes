@@ -52,6 +52,8 @@ $.ajax(requestOptions).done(function (response) {
 
   
 });
+
+  }
   
   </script>
 
@@ -119,14 +121,15 @@ $.ajax(requestOptions).done(function (response) {
     <input id="leadid_token" name="universal_leadid" type="hidden" value=""/>
 
 
-    <input type="hidden" id="tele" name="tele" defaultValue />
-
-    <input type="hidden" name="zip" id="zipCode" />
-    <input type="hidden" name="city" id="city" />
-    <input type="hidden" name="state" id="state" />
-
-    <input type="hidden" id="lp" name="lp" /> 
-    <input type="hidden" id="url" name='url' />
+   
+  <input type="hidden" id="lp" name="lp" /> 
+  <input type="hidden" id="gclid" name="gclid" /> 
+  <input type="hidden" id="url" name='url' />
+  <input type="hidden" id="tele" name="tele" />
+  
+  <input type="hidden" name="zip" id="zipCode" />
+  <input type="hidden" name="city" id="city" />
+  <input type="hidden" name="state" id="state" />
 
     <script> 
       const urlSearch = window.location.search;
