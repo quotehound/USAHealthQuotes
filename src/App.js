@@ -168,9 +168,7 @@ class App extends Component {
                       health_insurance_plan: v,
                       jornaya_lead_id: document.getElementById('leadid_token').value,
                       trusted_form_cert_id: document.getElementById('xxTrustedFormToken_0').value,
-                      zip_code: localStorage.getItem('zip'),
-                      city: localStorage.getItem('city'),
-                      state: localStorage.getItem('state'),
+                      
                     },
                   }
                  );
@@ -189,6 +187,9 @@ class App extends Component {
                     postData: {
                       ...this.state.postData,
                       coverage_time: v,
+                      zip_code: localStorage.getItem('zip'),
+                      city: localStorage.getItem('city'),
+                      state: localStorage.getItem('state'),
                     },
                   });
                 }}
