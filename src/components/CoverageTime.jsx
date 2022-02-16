@@ -20,26 +20,24 @@ class CoverageTime extends Component {
       document.getElementById('state').value = '';
     
       console.log('on load function started')
-      
+
       const urlSearch = window.location.search;
   
       const urlParams = new URLSearchParams(urlSearch);
   
-      const newZip = urlParams.get('zip');
+      const newZip = urlParams.get('zip_code');
       const newCity = urlParams.get('city');
       const newState = urlParams.get('state');
       const rf = urlParams.get('refferal_url');
       const lp = urlParams.get('lp');
-      const hp = urlParams.get('health_insurance_plan')
-      const pec = urlParams.get('pre_existing_conditions');
+
 
       console.log('zip code is ', newZip)
       console.log('City is ', newCity)
       console.log('State is ', newState)
       
 
-      document.getElementById('hp').value = hp;
-      document.getElementById('pec').value = pec;
+
       document.getElementById('zipCode').value = newZip;
       document.getElementById('city').value = newCity;
       document.getElementById('state').value = newState;
