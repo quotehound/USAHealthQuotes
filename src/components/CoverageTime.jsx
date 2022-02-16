@@ -20,6 +20,7 @@ class CoverageTime extends Component {
       document.getElementById('state').value = '';
     
       console.log('on load function started')
+      
       const urlSearch = window.location.search;
   
       const urlParams = new URLSearchParams(urlSearch);
