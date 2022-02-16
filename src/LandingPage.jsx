@@ -116,13 +116,22 @@ class LandingPage extends Component {
     const urlSearch = window.location.search;
     const urlParams = new URLSearchParams(urlSearch)
 
-    const lp = urlParams.get('lp_request_id');
+    var lp = urlParams.get('lp_request_id');
+
+    if (lp === null) {
+      var lp = '';
+
+      document.getElementById('lp').value = '';
+    }
     const gclid = urlParams.get('gclid');
+
+    const city = localStorage.getItem('city');
+    const state = localStorage.getItem('state');
 
     this.props.setLp(lp)
 
     console.log('updated props with value: ', zipValue);
-    this.props.history.push('/age' + '?lp_request_id=' + lp + '&zip_code=' + zipValue);
+    this.props.history.push('/age' + '?lp_request_id=' + lp + '&zip=' + zipValue + '&city=' + city + '&state=' + state);
 
   }
 
