@@ -157,7 +157,7 @@ class CoverageTime extends Component {
             <div className="w-full space-y-6 relative flex justify-center text-sm leading-5">
 
               <div className="text-sm leading-5 buttonBlock">
-                <button className="chooseButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="Immediatley" onClick={this.coverage}>Immediatley</button>
+                <button className="chooseButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="immediately" onClick={this.coverage}>Immediatley</button>
 
                 <button className="chooseButton bg-blue-500 rounded text-white font-bold" type="button" data-config-id="05_button" data-value="2 Months" onClick={this.coverage}>2 Months</button>
 
