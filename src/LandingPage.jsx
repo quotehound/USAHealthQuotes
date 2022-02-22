@@ -71,24 +71,22 @@ class LandingPage extends Component {
 
         else {
 
-          localStorage.clear();
-
-
           localStorage.setItem('zip', val);
 
           document.getElementById('zipCode').value = val
           document.getElementById('zip').value = val;
-
+    
           let zipVal = localStorage.getItem('zip');
 
           let city = parse.city;
           let state = parse.state;
 
-          localStorage.setItem('city', city);
-          localStorage.setItem('state', state);
+        localStorage.setItem('city', city);
+        localStorage.setItem('state', state);
 
-          document.getElementById('city').value = city;
-          document.getElementById('state').value = state;
+          document.getElementById('zipCode').value = zipVal;
+        document.getElementById('city').value = city;
+          document.getElementById('state').value = state; 
 
         }
 
@@ -131,7 +129,7 @@ class LandingPage extends Component {
     this.props.setLp(lp)
 
     console.log('updated props with value: ', zipValue);
-    this.props.history.push('/age' + '?lp_request_id=' + lp + '&zip=' + zipValue + '&city=' + city + '&state=' + state);
+    this.props.history.push('/age' + '?lp=' + lp + '&zip=' + zipValue + '&city=' + city + '&state=' + state);
 
   }
 

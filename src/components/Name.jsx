@@ -31,8 +31,8 @@ class Name extends Component {
 
     const urlParams = new URLSearchParams(urlSearch);
 
-    const zip = urlParams.get('zip_code');
-    const lp = urlParams.get('lp_request_id')
+    const zip = urlParams.get('zip');
+    const lp = urlParams.get('lp')
     const pre = urlParams.get('pre_existing_conditions');
     const time = urlParams.get('coverage_time')
     const income = urlParams.get('household_income');
@@ -48,7 +48,7 @@ class Name extends Component {
         console.log('first name is: ' + firstName + ' last name is: ' + lastName);
 
      
-    this.props.history.push('/email-phone' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&pre_existing_conditions=' + pre + '&household_size=' + people + '&weight=' + weight + '&height=' + height + '&address=' + address + '&first_name=' + firstName + '&last_name=' + lastName);
+    this.props.history.push('/email-phone' + '?lp=' + lp + '&zip=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&pre_existing_conditions=' + pre + '&household_size=' + people + '&weight=' + weight + '&height=' + height + '&address=' + address + '&first_name=' + firstName + '&last_name=' + lastName);
 
 
     }

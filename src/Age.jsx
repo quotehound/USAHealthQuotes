@@ -22,9 +22,9 @@ class Age extends Component {
 
     const urlParams = new URLSearchParams(urlSearch);
 
-    const zip = urlParams.get('zip_code');
+    const zip = urlParams.get('zip');
 
-    const lp = urlParams.get('lp_request_id')
+    const lp = urlParams.get('lp')
 
     const city = document.getElementById('city').value;
     const state = document.getElementById('state').value;
@@ -42,14 +42,14 @@ class Age extends Component {
 
     const urlParams = new URLSearchParams(urlSearch);
 
-    const zip = urlParams.get('zip_code');
+    const zip = urlParams.get('zip');
 
-    const lp = urlParams.get('lp_request_id')
+    const lp = urlParams.get('lp')
 
     const city = document.getElementById('city').value;
     const state = document.getElementById('state').value;
 
-    this.props.history.push('/coverage-time' + '?lp_request_id=' + lp + '&zip_code=' +  zip);
+    this.props.history.push('/coverage-time' + '?lp=' + lp + '&zip=' +  zip);
 
   }
 

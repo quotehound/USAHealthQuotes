@@ -113,7 +113,17 @@ $.ajax(requestOptions).done(function (response) {
 
       
 
+    <script> 
+      const urlSearch = window.location.search;
 
+      const urlParams = new URLSearchParams(urlSearch);
+
+      const lp = urlParams.get('lp_request_id');
+
+      document.getElementById('lp').value = lp;
+
+     
+      </script> 
 
 
  
@@ -133,17 +143,7 @@ $.ajax(requestOptions).done(function (response) {
   <input type="hidden" name="city" id="city" />
   <input type="hidden" name="state" id="state" />
 
-    <script> 
-      const urlSearch = window.location.search;
 
-      const urlParams = new URLSearchParams(urlSearch);
-
-      const lp = urlParams.get('lp_request_id');
-
-      document.getElementById('lp').value = lp;
-
-     
-      </script> 
 
     
 <script id="LeadiDscript" type="text/javascript">

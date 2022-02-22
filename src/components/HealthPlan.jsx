@@ -21,11 +21,11 @@ class HealthPlan extends Component {
 
         const urlParams = new URLSearchParams(urlSearch);
 
-        const zip = urlParams.get('zip_code');
+        const zip = urlParams.get('zip');
 
-        const lp = urlParams.get('lp_request_id')
+        const lp = urlParams.get('lp')
 
-        this.props.history.push('/coverage-time' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan');
+        this.props.history.push('/coverage-time' + '?lp=' + lp + '&zip=' + zip + '&health_insurance_plan=ACA_Plan');
     }
 
 

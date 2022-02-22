@@ -28,8 +28,8 @@ class HeightWeight extends Component {
 
     const urlParams = new URLSearchParams(urlSearch);
 
-    const zip = urlParams.get('zip_code');
-    const lp = urlParams.get('lp_request_id')
+    const zip = urlParams.get('zip');
+    const lp = urlParams.get('lp')
     //const plan = urlParams.get('health_insurance_plan');
     const time = urlParams.get('coverage_time')
     const income = urlParams.get('household_income');
@@ -74,7 +74,7 @@ class HeightWeight extends Component {
       toast.dismiss();
       console.log("success: ", weight);
 
-      this.props.history.push('/address' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&pre_existing_conditions=' + pre + '&household_size=' + people + '&weight=' + weight + '&height=' + height);
+      this.props.history.push('/address' + '?lp=' + lp + '&zip=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + time + '&household_income=' + income + '&gender=' + gender + '&pre_existing_conditions=' + pre + '&household_size=' + people + '&weight=' + weight + '&height=' + height);
 
     }
 

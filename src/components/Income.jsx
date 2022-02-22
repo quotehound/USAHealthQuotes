@@ -21,13 +21,13 @@ class Income extends Component {
 
     const urlParams = new URLSearchParams(urlSearch);
 
-    const zip = urlParams.get('zip_code');
-    const lp = urlParams.get('lp_request_id')
+    const zip = urlParams.get('zip');
+    const lp = urlParams.get('lp')
     //const plan = urlParams.get('health_insurance_plan');
     const time = urlParams.get('coverage_time')
      
 
-    this.props.history.push('/gender' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + time + '&household_income=' + incomeAmount);
+    this.props.history.push('/gender' + '?lp=' + lp + '&zip=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + time + '&household_income=' + incomeAmount);
   }
 
 

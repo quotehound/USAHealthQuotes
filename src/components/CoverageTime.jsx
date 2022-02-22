@@ -25,7 +25,7 @@ class CoverageTime extends Component {
   
       const urlParams = new URLSearchParams(urlSearch);
   
-      const newZip = urlParams.get('zip_code');
+      const newZip = urlParams.get('zip');
       const newCity = urlParams.get('city');
       const newState = urlParams.get('state');
       const rf = urlParams.get('refferal_url');
@@ -80,7 +80,7 @@ class CoverageTime extends Component {
         const urlParams = new URLSearchParams(urlSearch);
     
         const zip = urlParams.get('zip');
-      var lp = urlParams.get('lp_request_id');
+      var lp = urlParams.get('lp');
 
 
       if (lp === null) {
@@ -89,7 +89,7 @@ class CoverageTime extends Component {
         localStorage.setItem('lp', lp)
       }
       else {
-        var lp = urlParams.get('lp_request_id')
+        var lp = urlParams.get('lp')
         localStorage.setItem('lp', lp)
       }
 
@@ -107,7 +107,7 @@ class CoverageTime extends Component {
 
        
 
-        this.props.history.push('/income' + '?lp_request_id=' + lp + '&zip_code=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + cover);
+        this.props.history.push('/income' + '?lp=' + lp + '&zip=' + zip + '&health_insurance_plan=ACA_Plan' + '&coverage_time=' + cover);
   }
   
 
